@@ -26,14 +26,14 @@ hostRecords=(
     "safesearch.pixabay.com"
     "safeapi.qwant.com"
 )
-yt-strictSS=(
+ytStrictSS=(
    "cname=www.youtube.com,restrict.youtube.com"
    "cname=m.youtube.com,restrict.youtube.com"
    "cname=youtubei.googleapis.com,restrict.youtube.com"
    "cname=youtube.googleapis.com,restrict.youtube.com"
    "cname=www.youtube-nocookie.com,restrict.youtube.com"
 )
-yt-moderateSS=(
+ytModerateSS=(
    "cname=www.youtube.com,restrictmoderate.youtube.com"
    "cname=m.youtube.com,restrictmoderate.youtube.com"
    "cname=youtubei.googleapis.com,restrictmoderate.youtube.com"
@@ -176,11 +176,11 @@ generate() {
 
     # YouTube SafeSearch 
     if [ "$YOUTUBE" == "Strict" ]; then
-        for line in "${yt-strictSS[@]}"
+        for line in "${ytStrictSS[@]}"
             do echo "$line"  >> "${file}"
         done
     elif [ "$YOUTUBE" == "Moderate" ]; then
-        for line in "${yt-moderateSS[@]}"
+        for line in "${ytModerateSS[@]}"
             do echo "$line"  >> "${file}"
         done 
     fi
